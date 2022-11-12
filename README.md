@@ -2,3 +2,6 @@
 # UML Diagrams
 ## UseCase Diagram
 ![](images/UseCaseDiagram.jpg)
+
+## State Diagram
+![](images/StatemachineDiagram.jpg)
