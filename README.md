@@ -1,5 +1,7 @@
-# TicTacToe
+# Team Project (SPARTANS #Journal - Tic-Tac-Toe)
+# UML Diagrams
+## UseCase Diagram
+![](images/UseCaseDiagram.jpg)
 
-A project on Tic-Tac-Toe game.
-
-
+## State Diagram
+![](images/StatemachineDiagram.jpg)
