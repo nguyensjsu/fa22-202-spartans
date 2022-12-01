@@ -5,3 +5,4 @@
 
 ## State Diagram
 ![](images/StatemachineDiagram.jpg)
+.
