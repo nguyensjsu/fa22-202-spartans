@@ -17,5 +17,4 @@ public class RedoButton extends CommandButton {
                 getP().setPane(token, originator.getRow(), originator.getColumn());
             }
         }
-    }
 }
