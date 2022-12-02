@@ -8,7 +8,7 @@ public class Main extends Application {
 
 	@Override // Override the start method in the Application class
 	public void start(Stage primaryStage) {		
-		Component p = SimplePane.getInstance(false);
+		Component p = SimplePane.getInstance(true);
 		p.decorate(); 
 		Pane pane = p.getPane();
 		BorderPane borderPane = new BorderPane();
