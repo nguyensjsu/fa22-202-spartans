@@ -8,4 +8,4 @@ public class NewButton extends CommandButton {
         public void Execute() {
             getP().newGame();
         }
-    }
+}
