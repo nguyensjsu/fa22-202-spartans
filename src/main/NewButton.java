@@ -1,5 +1,4 @@
-public class Button1 {
-    class NewButton extends CommandButton {
+public class NewButton extends CommandButton {
         public NewButton(String text) {
             super(text);
             this.setText("New");
@@ -10,4 +9,3 @@ public class Button1 {
             getP().newGame();
         }
     }
-}
