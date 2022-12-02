@@ -12,8 +12,8 @@ import javafx.scene.shape.Line;
 public class SimplePane extends BorderPane implements Component {
 	private Cell[][] cell = new Cell[3][3];
 	private char playerTurn = 'X';
-
 	private boolean isAdvancedMode;
+	private static Component theSimplePane;
 
 	private Label lblStatus = new Label("X's turn to play");
 
@@ -24,11 +24,16 @@ public class SimplePane extends BorderPane implements Component {
 	};
 
 	public static Component getInstance(boolean isAdvancedMode) {
-		if (isAdvancedMode) {
-			return new AdvancedPane(new SimplePane(isAdvancedMode));
-		} else {
-			return new StandardPane(new SimplePane(isAdvancedMode));
+		if(theSimplePane == null)
+		{
+			if (isAdvancedMode) {
+				theSimplePane = new AdvancedPane(new SimplePane(isAdvancedMode));
+			} else {
+				theSimplePane = new StandardPane(new SimplePane(isAdvancedMode));
+			}
+
 		}
+		return  theSimplePane;
 	}
 
 	private SimplePane(boolean bool) {
