@@ -129,6 +129,16 @@ public class SimplePane extends BorderPane implements Component {
 					// Display whose turn
 					getLblStatus().setText(playerTurn + "'s turn");
 				}
+
+				if (isAdvancedMode) 
+				{
+					CommandButton.originator.setState(playerTurn, row, column);
+					CommandButton.careTaker.addToUndoList(CommandButton.originator.saveStateToMemento());
+					for (int i = 0; i < CommandButton.careTaker.getMementoRedoListSize(); i++) 
+					{
+						CommandButton.careTaker.removeLastRedo();
+					}
+				}
 			}
 		}
 
