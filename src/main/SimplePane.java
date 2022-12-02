@@ -97,8 +97,37 @@ public class SimplePane extends BorderPane implements Component {
 		return lblStatus;
 	}
 
+	public Cell[][] getCells() {
+		return cell;
+	}
+
+	/** Determine if the player with the specified token wins 
+	 * Using Chain Of Responsibility design pattern
+	*/
+	public boolean isWon(char token) {
+		Handler row = new CheckForRowsHandler();
+		Handler col = new CheckForColumnsHandler();
+		Handler diag = new CheckForDiagonalsHandler();
+
+		row.setSuccessor(col);
+		col.setSuccessor(diag);
+
+		return row.handleRequest(this, token);
+	}
+
+	/** Determine if all the cells are occupied and the game is a draw */
+	public boolean isDraw() {
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 3; j++) {
+				if (cell[i][j].getToken() == ' ')
+					return false;	
+			}
+		}
+		return true;
+	}
+
 	// An inner class for a cell
-	private class Cell extends Pane { // Token used for this cell
+	public class Cell extends Pane { // Token used for this cell
 		private char token = ' ';
 		private int row;
 		private int column;
@@ -175,43 +204,5 @@ public class SimplePane extends BorderPane implements Component {
 		public char getToken() {
 			return token;
 		}
-
-		/** Determine if the player with the specified token wins */
-		public boolean isWon(char token) {
-			for (int i = 0; i < 3; i++)
-
-				if (cell[i][0].getToken() == token && cell[i][1].getToken() == token
-						&& cell[i][2].getToken() == token) {
-					return true;
-				}
-
-			for (int j = 0; j < 3; j++)
-				if (cell[0][j].getToken() == token && cell[1][j].getToken() == token
-						&& cell[2][j].getToken() == token) {
-					return true;
-				}
-
-			if (cell[0][0].getToken() == token && cell[1][1].getToken() == token && cell[2][2].getToken() == token) {
-				return true;
-			}
-
-			if (cell[0][2].getToken() == token && cell[1][1].getToken() == token && cell[2][0].getToken() == token) {
-				return true;
-			}
-
-			return false;
-		}
-
-		/** Determine if all the cells are occupied and the game is a draw */
-		public boolean isDraw() {
-			for (int i = 0; i < 3; i++)
-				for (int j = 0; j < 3; j++)
-					if (cell[i][j].getToken() == ' ')
-						return false;
-
-			return true;
-		}
-
 	}
-
 }
