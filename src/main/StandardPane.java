@@ -1,7 +1,7 @@
 
-public class PaneWithoutUpdate extends DecoratorPane {
+public class StandardPane extends DecoratorPane {
 
-	PaneWithoutUpdate(Component pane) {
+	StandardPane(Component pane) {
 		super(pane);
 	}
 
