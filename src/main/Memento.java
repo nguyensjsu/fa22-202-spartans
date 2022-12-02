@@ -62,5 +62,58 @@ class Originator {
 }
 
 class CareTaker {
+	private List<Memento> undoMementoList = new ArrayList<Memento>();
+	private List<Memento> redoMementoList = new ArrayList<Memento>();
+
+	private int undoIndex;
+	private int redoIndex;
+
+	public CareTaker() {
+		
+	}
+
+	public void addToUndoList(Memento state) {
+		
+	}
+
+	public void addToRedoList(Memento state) {
+		
+	}
+
+	public Memento removeLastUndo() {
+
+	}
+
+	public Memento removeLastRedo() {
+
+	}
+
+	public int getMementoUndoListSize() {
+		return undoMementoList.size();
+	}
+
+	public int getMementoRedoListSize() {
+	}
+
+	// public int getUndoIndex() {
+	// 	return undoIndex;
+	// }
+
+	// public int getRedoIndex() {
+	// 	return redoIndex;
+	// }
+
+	public List<Memento> getUndoArrayList() {
+	}
+
+	public List<Memento> getRedoArrayList() {
+	}
+
+	public Memento getUndoMemento() {
+		
+	}
+
+	public Memento getRedoMemento() {
 	
+	}
 }
