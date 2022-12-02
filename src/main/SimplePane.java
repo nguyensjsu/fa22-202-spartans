@@ -141,6 +141,18 @@ public class SimplePane extends BorderPane implements Component {
 
 				this.getChildren().addAll(line1, line2); // Add the lines to the pane
 
+			} else if (token == 'O') {
+				Ellipse ellipse = new Ellipse(this.getWidth() / 2, this.getHeight() / 2, this.getWidth() / 2 - 10, this.getHeight() / 2 - 10);
+				ellipse.centerXProperty().bind(this.widthProperty().divide(2));
+				ellipse.centerYProperty().bind(this.heightProperty().divide(2));
+				ellipse.radiusXProperty().bind(this.widthProperty().divide(2).subtract(10));
+				ellipse.radiusYProperty().bind(this.heightProperty().divide(2).subtract(10));
+				ellipse.setStroke(Color.WHITE);
+				ellipse.setFill(Color.BLACK);
+
+				this.getChildren().add(ellipse); // Add the ellipse to the pane
+			} else if (token == ' ') {
+				this.getChildren().clear();
 			}
 		}
 
