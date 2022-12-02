@@ -13,10 +13,7 @@ public class SimplePane extends BorderPane implements Component {
 	private Cell[][] cell = new Cell[3][3];
 	private char playerTurn = 'X';
 
-	private GridPane cellPane;
-	private FlowPane jpButton;
-
-	private boolean isAdvanceMode;
+	private boolean isAdvancedMode;
 
 	private Label lblStatus = new Label("X's turn to play");
 
@@ -26,45 +23,42 @@ public class SimplePane extends BorderPane implements Component {
 		}
 	};
 
-	public static Component getInstance(boolean isAdvanceMode) {
-		if (isAdvanceMode) {
-			return new PaneWithUpdate(new SimplePane(isAdvanceMode));
+	public static Component getInstance(boolean isAdvancedMode) {
+		if (isAdvancedMode) {
+			return new AdvancedPane(new SimplePane(isAdvancedMode));
 		} else {
-			return new PaneWithoutUpdate(new SimplePane(isAdvanceMode));
+			return new StandardPane(new SimplePane(isAdvancedMode));
 		}
 	}
 
 	private SimplePane(boolean bool) {
-		isAdvanceMode = bool;
+		isAdvancedMode = bool;
 	}
 
 	@Override
 	public void decorate() {
-
-		cellPane = new GridPane();
+		GridPane gp = new GridPane();
 		for (int i = 0; i < cell.length; i++) {
 			for (int j = 0; j < cell.length; j++) {
 				cell[i][j] = new Cell(i, j);
-				cellPane.add(cell[i][j], i, j);
+				gp.add(cell[i][j], i, j);
 			}
 		}
-
-		this.setCenter(cellPane);
+		this.setCenter(gp);
 		this.setBottom(lblStatus);
-		
 	}
 	
 	@Override
 	public void addButtons(CommandButton... buttons) {
-		jpButton = new FlowPane();
-		jpButton.getChildren().addAll(buttons);
+		FlowPane fp = new FlowPane();
+		fp.getChildren().addAll(buttons);
 
 		for (CommandButton b : buttons) {
 			b.setPane(this);
 			b.setOnAction(ae);
 		}
 
-		this.setTop(jpButton);
+		this.setTop(fp);
 	}
 
 	public void newGame() {
@@ -81,6 +75,7 @@ public class SimplePane extends BorderPane implements Component {
 		playerTurn = (playerTurn == 'X') ? 'O' : 'X';
 		// Display whose turn
 		lblStatus.setText(playerTurn + "'s turn");
+		cell[i][j].setToken(shape);
 	}
 
 	public boolean checkCells() {
@@ -112,8 +107,99 @@ public class SimplePane extends BorderPane implements Component {
 			this.row = i;
 			this.column = j;
 
-			setStyle("-fx-border-color: black");
+			setStyle("-fx-border-color: white");
 			this.setPrefSize(2000, 2000);
+			this.setOnMouseClicked(e -> handleMouseClick());
+		}
+
+		/* Handle a mouse click event */
+		private void handleMouseClick() { 
+			// If cell is empty and game is not over
+			if (token == ' ' && playerTurn != ' ') {
+				setToken(playerTurn); // Set token in the cell
+				// Check game status
+				if (isWon(playerTurn)) {
+					getLblStatus().setText(playerTurn + " won!");
+					playerTurn = ' '; // Game is over
+				} else if (isDraw()) {
+					getLblStatus().setText("Draw!");
+					playerTurn = ' '; // Game is over
+				} else { // Change the turn
+					playerTurn = (playerTurn == 'X') ? 'O' : 'X';
+					// Display whose turn
+					getLblStatus().setText(playerTurn + "'s turn");
+				}
+			}
+		}
+
+		/** Set a new token */
+		public void setToken(char c) {
+			token = c;
+			if (token == 'X') {
+				Line line1 = new Line(10, 10, this.getWidth() - 10, this.getHeight() - 10);
+				line1.endXProperty().bind(this.widthProperty().subtract(10));
+				line1.endYProperty().bind(this.heightProperty().subtract(10));
+
+				Line line2 = new Line(10, this.getHeight() - 10, this.getWidth() - 10, 10);
+				line2.startYProperty().bind(this.heightProperty().subtract(10));
+				line2.endXProperty().bind(this.widthProperty().subtract(10));
+
+				this.getChildren().addAll(line1, line2); // Add the lines to the pane
+
+			} else if (token == 'O') {
+				Ellipse ellipse = new Ellipse(this.getWidth() / 2, this.getHeight() / 2, this.getWidth() / 2 - 10, this.getHeight() / 2 - 10);
+				ellipse.centerXProperty().bind(this.widthProperty().divide(2));
+				ellipse.centerYProperty().bind(this.heightProperty().divide(2));
+				ellipse.radiusXProperty().bind(this.widthProperty().divide(2).subtract(10));
+				ellipse.radiusYProperty().bind(this.heightProperty().divide(2).subtract(10));
+				ellipse.setStroke(Color.WHITE);
+				ellipse.setFill(Color.BLACK);
+
+				this.getChildren().add(ellipse); // Add the ellipse to the pane
+			} else if (token == ' ') {
+				this.getChildren().clear();
+			}
+		}
+
+		/** Return token */
+		public char getToken() {
+			return token;
+		}
+
+		/** Determine if the player with the specified token wins */
+		public boolean isWon(char token) {
+			for (int i = 0; i < 3; i++)
+
+				if (cell[i][0].getToken() == token && cell[i][1].getToken() == token
+						&& cell[i][2].getToken() == token) {
+					return true;
+				}
+
+			for (int j = 0; j < 3; j++)
+				if (cell[0][j].getToken() == token && cell[1][j].getToken() == token
+						&& cell[2][j].getToken() == token) {
+					return true;
+				}
+
+			if (cell[0][0].getToken() == token && cell[1][1].getToken() == token && cell[2][2].getToken() == token) {
+				return true;
+			}
+
+			if (cell[0][2].getToken() == token && cell[1][1].getToken() == token && cell[2][0].getToken() == token) {
+				return true;
+			}
+
+			return false;
+		}
+
+		/** Determine if all the cells are occupied and the game is a draw */
+		public boolean isDraw() {
+			for (int i = 0; i < 3; i++)
+				for (int j = 0; j < 3; j++)
+					if (cell[i][j].getToken() == ' ')
+						return false;
+
+			return true;
 		}
 
 	}
