@@ -69,15 +69,22 @@ class CareTaker {
 	private int redoIndex;
 
 	public CareTaker() {
-		
+		undoIndex = undoMementoList.size();
+		redoIndex = redoMementoList.size();
 	}
 
 	public void addToUndoList(Memento state) {
-		
+		if (state != null) {
+			undoMementoList.add(state);
+			undoIndex = undoMementoList.size() - 1;
+		}
 	}
 
 	public void addToRedoList(Memento state) {
-		
+		if (state != null) {
+			redoMementoList.add(state);
+			redoIndex = redoMementoList.size() - 1;
+		}
 	}
 
 	public Memento removeLastUndo() {
