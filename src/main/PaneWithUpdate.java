@@ -7,6 +7,12 @@ public class PaneWithUpdate extends DecoratorPane {
 
 	@Override
 	public void decorate() {
+		super.decorate();
 
+		NewButton newBtn = new NewButton("New");
+		UndoButton undoBtn = new UndoButton("Undo");
+		RedoButton redoBtn = new RedoButton("Redo");
+
+		super.addButtons(newBtn, undoBtn, redoBtn);
 	}
 }
