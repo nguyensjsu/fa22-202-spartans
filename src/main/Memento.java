@@ -88,11 +88,11 @@ class CareTaker {
 	}
 
 	public Memento removeLastUndo() {
-
+		return undoMementoList.remove(undoMementoList.size() - 1);
 	}
 
 	public Memento removeLastRedo() {
-
+		return redoMementoList.remove(redoMementoList.size() - 1);
 	}
 
 	public int getMementoUndoListSize() {
@@ -100,6 +100,7 @@ class CareTaker {
 	}
 
 	public int getMementoRedoListSize() {
+		return redoMementoList.size();
 	}
 
 	// public int getUndoIndex() {
@@ -111,16 +112,24 @@ class CareTaker {
 	// }
 
 	public List<Memento> getUndoArrayList() {
+		return undoMementoList;
 	}
 
 	public List<Memento> getRedoArrayList() {
+		return redoMementoList;
 	}
 
 	public Memento getUndoMemento() {
-		
+		if (undoMementoList.isEmpty() || undoIndex < 0) {
+			return null;
+		}
+		return undoMementoList.get(undoIndex--);
 	}
 
 	public Memento getRedoMemento() {
-	
+		if (redoMementoList.isEmpty() || redoIndex < 0) {
+			return null;
+		}
+		return redoMementoList.get(redoIndex--);
 	}
 }
