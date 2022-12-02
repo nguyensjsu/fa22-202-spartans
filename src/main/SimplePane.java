@@ -81,6 +81,7 @@ public class SimplePane extends BorderPane implements Component {
 		playerTurn = (playerTurn == 'X') ? 'O' : 'X';
 		// Display whose turn
 		lblStatus.setText(playerTurn + "'s turn");
+		cell[i][j].setToken(shape);
 	}
 
 	public boolean checkCells() {
@@ -112,8 +113,40 @@ public class SimplePane extends BorderPane implements Component {
 			this.row = i;
 			this.column = j;
 
-			setStyle("-fx-border-color: black");
+			setStyle("-fx-border-color: white");
 			this.setPrefSize(2000, 2000);
+			this.setOnMouseClicked(e -> handleMouseClick());
+		}
+
+		/* Handle a mouse click event */
+		private void handleMouseClick() { 
+			// If cell is empty and game is not over
+			if (token == ' ' && playerTurn != ' ') {
+				setToken(playerTurn); // Set token in the cell
+			}
+		}
+
+		/** Set a new token */
+		public void setToken(char c) {
+			token = c;
+
+			if (token == 'X') {
+				Line line1 = new Line(10, 10, this.getWidth() - 10, this.getHeight() - 10);
+				line1.endXProperty().bind(this.widthProperty().subtract(10));
+				line1.endYProperty().bind(this.heightProperty().subtract(10));
+
+				Line line2 = new Line(10, this.getHeight() - 10, this.getWidth() - 10, 10);
+				line2.startYProperty().bind(this.heightProperty().subtract(10));
+				line2.endXProperty().bind(this.widthProperty().subtract(10));
+
+				this.getChildren().addAll(line1, line2); // Add the lines to the pane
+
+			}
+		}
+
+		/** Return token */
+		public char getToken() {
+			return token;
 		}
 
 	}
