@@ -14,5 +14,4 @@ public class UndoButton extends CommandButton {
                 getP().setPane(' ', originator.getRow(), originator.getColumn());
             }
         }
-    }
 }
