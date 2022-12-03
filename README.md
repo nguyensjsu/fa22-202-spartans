@@ -84,4 +84,4 @@ We can only have one instance of the object.
 
 ## User story video
 
-[![dhfqwehb](Tic%20Tac%20Toe.mp4)](https://youtu.be/3IBpcBAHkIo)
+https://youtu.be/3IBpcBAHkIo
