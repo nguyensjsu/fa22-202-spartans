@@ -46,6 +46,19 @@ Our project is to implement a well-known game, Tic Tac Toe, but having advance f
 #### Strategy Pattern 
 #### A behavioral design pattern called strategy enables you to construct a family of algorithms, separate them into distinct classes, and make their objects interchangeable.
 
+## Decorator
+
+Decorator is used to attach additional responsibilities to an object dynamically. In this project, we have used Decorator for displaying two types of game modes, Standard Mode and Advance Mode.
+
+In Standard Mode, players can play an ordinary tic tac toe game with only feature to restart the game.
+In Advance Mode, Players can undo, redo their moves along with the functionalities of standard mode.
+
+## Chain of responsibility
+
+Chain of responsibilty is used to avoid coupling the sender of a request to its receiver by giving more than one object a chance to handle the request. The receiving objects are chained and the request is passed amongst the objects until an object handles it.
+
+In this project, we are using this pattern for Checking the winner of the game. So, we have three handlers, where one checks if any row has sequence of X's or O's, if not, then it passes the request to column handler which checks if any column has sequence of X's or O's, and if not, then it passes the request to diagonals handler which checks if the diagonal or anti-diagonal has sequence of X's or O's
+
 ## Memento
 
 Memento is used to capture and externalize an object's internal state so that the object can be restored to this state later. In this project, we have used Memento along with Command pattern in order to undo-redo the moves of Tic-Tac-Toe.
