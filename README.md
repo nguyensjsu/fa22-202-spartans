@@ -19,7 +19,15 @@ Our project is to implement a well-known game, Tic Tac Toe, but having advance f
 2. Aditya Kopalli
 
 
-3. Vishwa pernapatti
+3. Vishwa Tejendra pernapati
+-- We have implemented 3 buttons for this game.
+    1. New Game button
+    2. Undo Button
+    3. Redo Button
+
+This Command Pattern comes into picture to run the appropriate logic when the player clicks on any of the obove buttons to perform the respective actions.
+
+-- Making of ad video was interesting as I had included some good animations and transitions.
 
 
 4. Hardik Ghori
