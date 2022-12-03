@@ -11,6 +11,21 @@ Our project is to implement a well-known game, Tic Tac Toe, but having advance f
 3. Vishwa pernapatti
 4. Hardik Ghori
 
+## Team Individual Contributions
+
+1. Praneet Bang
+
+
+3. Aditya Kopalli
+
+
+5. Vishwa pernapatti
+
+
+7. Hardik Ghori
+
+
+
 ## Game screenshots
 
 ### Advance Mode - 
