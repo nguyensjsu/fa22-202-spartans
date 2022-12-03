@@ -8,7 +8,7 @@ Our project is to implement a well-known game, Tic Tac Toe, but having advance f
 
 1. Praneet Bang
 2. Aditya Kopalli
-3. Vishwa pernapatti
+3. Vishwa Tejendra pernapati
 4. Hardik Ghori
 
 ## Team Individual Contributions
