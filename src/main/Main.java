@@ -13,7 +13,7 @@ public class Main extends Application {
 		Pane pane = p.getPane();
 		BorderPane borderPane = new BorderPane();
 		borderPane.setCenter(pane);
-		Scene scene = new Scene(borderPane, 300, 300);
+		Scene scene = new Scene(borderPane, 600, 600);
 		primaryStage.setTitle("Tic Tac Toe");
 		primaryStage.setScene(scene);
 		primaryStage.show();
