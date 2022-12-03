@@ -14,7 +14,7 @@ public class SimplePane extends BorderPane implements Component {
 	private char playerTurn = 'X';
 	private boolean isAdvancedMode;
 	private static Component theSimplePane;
-
+	StateMachine stateMachine ;
 	private Label lblStatus = new Label("X's turn to play");
 
 	public EventHandler<ActionEvent> ae = new EventHandler<ActionEvent>() {
@@ -31,13 +31,13 @@ public class SimplePane extends BorderPane implements Component {
 			} else {
 				theSimplePane = new StandardPane(new SimplePane(isAdvancedMode));
 			}
-
 		}
 		return  theSimplePane;
 	}
 
 	private SimplePane(boolean bool) {
 		isAdvancedMode = bool;
+		stateMachine = new StateMachine(SimplePane.this);
 	}
 
 	@Override
@@ -76,6 +76,10 @@ public class SimplePane extends BorderPane implements Component {
 		decorate();
 	}
 
+	public void newToggle() {
+		theSimplePane  = new StandardPane(new SimplePane(isAdvancedMode));
+	}
+
 	public void setPane(char shape, int i, int j) {
 		playerTurn = (playerTurn == 'X') ? 'O' : 'X';
 		// Display whose turn
@@ -106,29 +110,8 @@ public class SimplePane extends BorderPane implements Component {
 		return cell;
 	}
 
-	/** Determine if the player with the specified token wins 
-	 * Using Chain Of Responsibility design pattern
-	*/
-	public boolean isWon(char token) {
-		Handler row = new CheckForRowsHandler();
-		Handler col = new CheckForColumnsHandler();
-		Handler diag = new CheckForDiagonalsHandler();
-
-		row.setSuccessor(col);
-		col.setSuccessor(diag);
-
-		return row.handleRequest(this, token);
-	}
-
-	/** Determine if all the cells are occupied and the game is a draw */
-	public boolean isDraw() {
-		for (int i = 0; i < 3; i++) {
-			for (int j = 0; j < 3; j++) {
-				if (cell[i][j].getToken() == ' ')
-					return false;	
-			}
-		}
-		return true;
+	public void setPlayerTurn(char x) {
+		playerTurn = x;
 	}
 
 	// An inner class for a cell
@@ -150,21 +133,9 @@ public class SimplePane extends BorderPane implements Component {
 		private void handleMouseClick() { 
 			// If cell is empty and game is not over
 			if (token == ' ' && playerTurn != ' ') {
-				setToken(playerTurn); // Set token in the cell
-				// Check game status
-				if (isWon(playerTurn)) {
-					getLblStatus().setText(playerTurn + " won!");
-					playerTurn = ' '; // Game is over
-				} else if (isDraw()) {
-					getLblStatus().setText("Draw!");
-					playerTurn = ' '; // Game is over
-				} else { // Change the turn
-					playerTurn = (playerTurn == 'X') ? 'O' : 'X';
-					// Display whose turn
-					getLblStatus().setText(playerTurn + "'s turn");
-				}
-
-				if (isAdvancedMode) 
+				setToken(playerTurn);
+				stateMachine.changeState(playerTurn);
+				if (isAdvancedMode)
 				{
 					CommandButton.originator.setState(playerTurn, row, column);
 					CommandButton.careTaker.addToUndoList(CommandButton.originator.saveStateToMemento());
