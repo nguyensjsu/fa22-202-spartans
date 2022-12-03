@@ -23,6 +23,11 @@ Our project is to implement a well-known game, Tic Tac Toe, but having advance f
 
 
 4. Hardik Ghori
+<br> Understood the project requirements
+<br> Explored GreenFoot and Java FX
+<br> Draw UML design diagrams for the game
+<br> Implement TicTacToe logic
+<br> Maintain project journal
 
 
 
