@@ -21,3 +21,7 @@ Our project is to implement a well-known game, Tic Tac Toe, but having advance f
 
 ### Class Diagram
 ![](images/Class%20Diagram.png)
+
+### Design Patterns
+#### Strategy Pattern 
+#### A behavioral design pattern called strategy enables you to construct a family of algorithms, separate them into distinct classes, and make their objects interchangeable.
