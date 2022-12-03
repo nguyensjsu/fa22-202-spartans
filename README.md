@@ -78,7 +78,14 @@ Chain of responsibilty is used to avoid coupling the sender of a request to its 
 In this project, we are using this pattern for Checking the winner of the game. So, we have three handlers, where one checks if any row has sequence of X's or O's, if not, then it passes the request to column handler which checks if any column has sequence of X's or O's, and if not, then it passes the request to diagonals handler which checks if the diagonal or anti-diagonal has sequence of X's or O's
 
 ### Command Pattern
-Many turn-based games include an "undo" button to let players reverse mistakes they make during play. This feature becomes especially relevant for mobile game development where the touch may have clumsy touch recognition. Rather than rely on a system where you ask the user "are you sure you want to do this task?" for every action they take, it is much more efficient to let them make mistakes and have the option of easily reverse the action. 
+Many turn-based games include an "undo" button to let players reverse mistakes they make during play. This feature becomes especially relevant for mobile game development where the touch may have clumsy touch recognition. Rather than rely on a system where you ask the user "are you sure you want to do this task?" for every action they take, it is much more efficient to let them make mistakes and have the option of easily reverse the action.
+
+So, we have implemented 3 buttons for this game.
+1. New Game button
+2. Undo Button
+3. Redo Button
+
+This Command Pattern comes into picture to run the appropriate logic when the player clicks on any of the obove buttons to perform the respective actions.
 
 ### Memento
 Memento is used to capture and externalize an object's internal state so that the object can be restored to this state later. In this project, we have used Memento along with Command pattern in order to undo-redo the moves of Tic-Tac-Toe.
