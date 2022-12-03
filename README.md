@@ -11,6 +11,22 @@ Our project is to implement a well-known game, Tic Tac Toe, but having advance f
 3. Vishwa pernapatti
 4. Hardik Ghori
 
+## Game screenshots
+
+### Advance Mode - 
+
+![](images/Advance1.png)
+![](images/Advance2.png)
+![](images/Advance3.png)
+![](images/Advance4.png)
+
+### Standard Mode -
+
+![](images/Standard1.png)
+![](images/Standard2.png)
+![](images/Standard3.png)
+![](images/Standard4.png)
+
 ## UML Diagrams
 
 ### UseCase Diagram
@@ -25,7 +41,7 @@ Our project is to implement a well-known game, Tic Tac Toe, but having advance f
 ### Sequence Diagram
 ![](images/Sequence%20Diagram.jpg)
 
-### Design Patterns
+### Design Patterns used in the project
 
 #### Strategy Pattern 
 #### A behavioral design pattern called strategy enables you to construct a family of algorithms, separate them into distinct classes, and make their objects interchangeable.
