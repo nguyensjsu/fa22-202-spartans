@@ -47,7 +47,7 @@ As every move is made, you check if the move is win or lose. Based on that you r
     2. Undo Button
     3. Redo Button
 
-This Command Pattern comes into picture to run the appropriate logic when the player clicks on any of the obove buttons to perform the respective actions.
+This Command Pattern comes into picture to run the appropriate logic when the player clicks on any of the above buttons to perform the respective actions.
 
 * Making of ad video was interesting as I had included some good animations and transitions.
 
