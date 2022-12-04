@@ -13,10 +13,10 @@ Our project is to implement a well-known game, Tic Tac Toe, but having advance f
 
 ## Team Individual Contributions
 
-### 1. Praneet Bang
+### 1. Praneet Bang - https://github.com/nguyensjsu/fa22-202-spartans/blob/main/Journal/Praneet%20Bang.md (Journal)
 Praneet learned about JavaFX sdk that we used in our project to implement the User Interface of the Tic Tac Toe game. He did the requirement analysis and contributed to the design of the game. He worked on the initial starter code for the project and then implement Decorator pattern for the 2 game modes in our project. Then, He worked on implementing chain of responsibility pattern for the functionality which checks if the game is a draw or if X or O won the game. He also created Class Diagram of our project and also maintained the Team Journal. 
 
-### 2. Aditya Kopalli
+### 2. Aditya Kopalli - https://github.com/nguyensjsu/fa22-202-spartans/blob/main/Journal/Aditya-%20Journal.md (Journal)
 The patterns implemented by Aditya in the following project
 
 1. Singleton
@@ -41,7 +41,7 @@ As every move is made, you check if the move is win or lose. Based on that you r
                    a. Originator class
                    b. Caretaker class
 
-### 3. Vishwa Tejendra pernapati
+### 3. Vishwa Tejendra pernapati - https://github.com/nguyensjsu/fa22-202-spartans/blob/main/Journal/Vishwa%20-%20Journal.md (Journal)
 * We have implemented 3 buttons for this game.
     1. New Game button
     2. Undo Button
@@ -51,7 +51,7 @@ This Command Pattern comes into picture to run the appropriate logic when the pl
 
 * Making of ad video was interesting as I had included some good animations and transitions.
 
-### 4. Hardik Ghori
+### 4. Hardik Ghori - https://github.com/nguyensjsu/fa22-202-spartans/blob/main/Journal/Hardik-%20journal.md (Journal)
 * Understood the project requirements
 * Explored GreenFoot and Java FX
 * Drawn and Explained the game Architecture
