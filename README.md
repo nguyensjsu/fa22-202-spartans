@@ -54,8 +54,9 @@ This Command Pattern comes into picture to run the appropriate logic when the pl
 ### 4. Hardik Ghori
 * Understood the project requirements
 * Explored GreenFoot and Java FX
+* Drawn and Explained the game Architecture
 * Implement TicTacToe logic
-* Maintain project journal
+
 
 
 ## Game screenshots
