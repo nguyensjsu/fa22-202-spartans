@@ -18,6 +18,30 @@ Our project is to implement a well-known game, Tic Tac Toe, but having advance f
 
 2. Aditya Kopalli
 
+The patterns implemented by Aditya in the following project
+
+1. Singleton
+2. State
+3. Memento
+
+1. Singleton - Make the class singleton by having a private contructor and initialising it only once.
+2. State - Create multiple states based on the app behaviour
+            a. WinState 
+            b. DrawState
+            c. ContinueState
+As every move is made, you check if the move is win or lose. Based on that you run the state and perform its action. You have a StateManager to maintain the states for these.
+3. Memento - You save the states of an object and use that for redo/undo. The main functionality lies in saving the state of the object in an array and restoring the state based on undo and redo
+
+Classes
+
+1. Singleton - SimplePage
+2. State : StateMachine
+                -> WonState
+                -> DrawState
+                -> NextState
+3. Memento class - Memento class
+                    a. Originator class
+                    b. Caretaker class
 
 3. Vishwa Tejendra pernapati
 -- We have implemented 3 buttons for this game.
