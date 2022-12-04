@@ -14,7 +14,7 @@ Our project is to implement a well-known game, Tic Tac Toe, but having advance f
 ## Team Individual Contributions
 
 ### 1. Praneet Bang
-<br> Praneet learned about JavaFX sdk that we used in our project to implement the User Interface of the Tic Tac Toe game. He did the requirement analysis and contributed to the design of the game. He worked on the initial starter code for the project and then implement Decorator pattern for the 2 game modes in our project. Then, He worked on implementing chain of responsibility pattern for the functionality which checks if the game is a draw or if X or O won the game. He also created Class Diagram of our project and also maintained the Team Journal. 
+Praneet learned about JavaFX sdk that we used in our project to implement the User Interface of the Tic Tac Toe game. He did the requirement analysis and contributed to the design of the game. He worked on the initial starter code for the project and then implement Decorator pattern for the 2 game modes in our project. Then, He worked on implementing chain of responsibility pattern for the functionality which checks if the game is a draw or if X or O won the game. He also created Class Diagram of our project and also maintained the Team Journal. 
 
 ### 2. Aditya Kopalli
 The patterns implemented by Aditya in the following project
