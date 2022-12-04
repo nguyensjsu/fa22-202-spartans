@@ -1,4 +1,5 @@
 ## Week 1
+* Our team gathered up for the first time and initiated a SCRUM call and introduced ourselves and discussed on different gaming designs to see which one could better suit us.
 * We had lots of thoughts darting around in your mind to pick the right topic to get started with the project which could fit enough design patterns.
 * Explored multiple projects and tried to understand if it was possible to fit in the design patterns.
 
