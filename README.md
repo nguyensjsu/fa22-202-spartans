@@ -72,6 +72,11 @@ This Command Pattern comes into picture to run the appropriate logic when the pl
 ![](images/Standard3.png)
 ![](images/Standard4.png)
 
+## Architecture Diagram -
+
+![](images/PXL_20221204_035504173.jpeg)
+
+
 ## UML Diagrams
 ### UseCase Diagram
 ![](images/UseCaseDiagram.jpg)
