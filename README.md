@@ -55,10 +55,10 @@ This Command Pattern comes into picture to run the appropriate logic when the pl
 
 
 ### 4. Hardik Ghori
-<br> Understood the project requirements
-<br> Explored GreenFoot and Java FX
-<br> Implement TicTacToe logic
-<br> Maintain project journal
+* Understood the project requirements
+* Explored GreenFoot and Java FX
+* Implement TicTacToe logic
+* Maintain project journal
 
 
 
