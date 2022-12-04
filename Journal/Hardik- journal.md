@@ -1,4 +1,6 @@
 
+## Sprint 1
+
 Week 1:
 What tasks did I work on / complete?
 -Create a project structure 
@@ -12,6 +14,7 @@ Set up project structure and create a basic game board
 What tasks are blocked waiting on another team member?
 - N/A
 
+## Sprint 2
 Week 2:
 What tasks did I work on / complete?
 Set up project structure and create a basic game board
@@ -24,6 +27,7 @@ What am I planning to work on next?
 What tasks are blocked waiting on another team member?
 - N/A
 
+## Sprint 3
 Week 3:
 What tasks did I work on / complete?
 - Created basic game logic for a two player game
@@ -32,6 +36,7 @@ What am I planning to work on next?
 - Designing the game with OOP design patterns
 - To implement Code of Responsibility to check the on row, column and diagonal using handlers
 
+## Sprint 4
 Week 4:
 What tasks did I work on / complete?
 - Complete the Journal
@@ -41,6 +46,7 @@ What tasks did I work on / complete?
 TRYING:
 
 - Trying to add timer using in the game using Observer pattern
+- Trying to toggle simple pane and advanced pane using Strategy pattern
 
 What tasks are blocked waiting on another team member?
 - N/A
