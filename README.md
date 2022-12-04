@@ -48,7 +48,8 @@ Classes
     1. New Game button
     2. Undo Button
     3. Redo Button
-<br><br>This Command Pattern comes into picture to run the appropriate logic when the player clicks on any of the obove buttons to perform the respective actions.
+
+This Command Pattern comes into picture to run the appropriate logic when the player clicks on any of the obove buttons to perform the respective actions.
 
 * Making of ad video was interesting as I had included some good animations and transitions.
 
