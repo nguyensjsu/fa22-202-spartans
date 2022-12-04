@@ -17,7 +17,6 @@ Our project is to implement a well-known game, Tic Tac Toe, but having advance f
 <br> Praneet learned about JavaFX sdk that we used in our project to implement the User Interface of the Tic Tac Toe game. He did the requirement analysis and contributed to the design of the game. He worked on the initial starter code for the project and then implement Decorator pattern for the 2 game modes in our project. Then, He worked on implementing chain of responsibility pattern for the functionality which checks if the game is a draw or if X or O won the game. He also created Class Diagram of our project and also maintained the Team Journal. 
 
 ### 2. Aditya Kopalli
-
 The patterns implemented by Aditya in the following project
 
 1. Singleton
@@ -33,15 +32,14 @@ As every move is made, you check if the move is win or lose. Based on that you r
 3. Memento - You save the states of an object and use that for redo/undo. The main functionality lies in saving the state of the object in an array and restoring the state based on undo and redo
 
 **Classes**
-
 1. Singleton - SimplePage
 2. State : StateMachine
-                -> WonState
-                -> DrawState
-                -> NextState
+           -> WonState
+           -> DrawState
+           -> NextState
 3. Memento class - Memento class
-                    a. Originator class
-                    b. Caretaker class
+                   a. Originator class
+                   b. Caretaker class
 
 ### 3. Vishwa Tejendra pernapati
 * We have implemented 3 buttons for this game.
@@ -53,7 +51,6 @@ This Command Pattern comes into picture to run the appropriate logic when the pl
 
 * Making of ad video was interesting as I had included some good animations and transitions.
 
-
 ### 4. Hardik Ghori
 * Understood the project requirements
 * Explored GreenFoot and Java FX
@@ -61,25 +58,21 @@ This Command Pattern comes into picture to run the appropriate logic when the pl
 * Maintain project journal
 
 
-
 ## Game screenshots
 
 ### Advance Mode - 
-
 ![](images/Advance1.png)
 ![](images/Advance2.png)
 ![](images/Advance3.png)
 ![](images/Advance4.png)
 
 ### Standard Mode -
-
 ![](images/Standard1.png)
 ![](images/Standard2.png)
 ![](images/Standard3.png)
 ![](images/Standard4.png)
 
 ## UML Diagrams
-
 ### UseCase Diagram
 ![](images/UseCaseDiagram.jpg)
 
