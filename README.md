@@ -76,6 +76,15 @@ This Command Pattern comes into picture to run the appropriate logic when the pl
 
 ![](images/PXL_20221204_035504173.jpeg)
 
+### Explanation:
+
+* Playing Piece has piece type which is dynamically defined by help of its children - PieceX and PieceO
+* PieceX passes type X to the parent Playing Piece
+* While PieceO passes type X to the parent Playing Piece
+* Board is a 2D matrix of size of nxn and has Playing Piece to store
+* Player: There are two players - PlayerX and PlayerO
+* Game is a main component which has a Board and a Player
+
 
 ## UML Diagrams
 ### UseCase Diagram
