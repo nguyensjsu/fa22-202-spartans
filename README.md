@@ -32,7 +32,7 @@ The patterns implemented by Aditya in the following project
 As every move is made, you check if the move is win or lose. Based on that you run the state and perform its action. You have a StateManager to maintain the states for these.
 3. Memento - You save the states of an object and use that for redo/undo. The main functionality lies in saving the state of the object in an array and restoring the state based on undo and redo
 
-Classes
+**Classes**
 
 1. Singleton - SimplePage
 2. State : StateMachine
