@@ -44,3 +44,8 @@ TRYING:
 
 What tasks are blocked waiting on another team member?
 - N/A
+
+
+
+Every week, our team focused on one of the XP Core Values. This week, we focused on Respect. We discussed how it is important to treat each other with respect, even if we disagree. 
+We also agreed to be mindful of the way we communicate with each other and to practice active listening. We also discussed the importance of respecting everyone in the team, regardless of their role. We discussed how we could continue to practice Respect throughout the project, such as by making sure everyone feels heard and respected in meetings, not interrupting when someone else is talking, and taking the time to really listen to others.
